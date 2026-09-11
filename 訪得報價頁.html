@@ -197,6 +197,7 @@ document.addEventListener('DOMContentLoaded', async function() {
       var template = document.querySelector('script[type="__bundler/template"]');
       if (!template) return;
       template.textContent = template.textContent
+        .replaceAll('內容私域線上事業顧問', '線上事業顧問')
         .replace('方舟｜年訂閱社群', '訪得們年訂閱社群')
         .replace('方舟年訂閱｜US$2,000', '訪得們年訂閱社群｜US$2,000')
         .replace(
