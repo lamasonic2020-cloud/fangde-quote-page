@@ -197,6 +197,17 @@ document.addEventListener('DOMContentLoaded', async function() {
       var template = document.querySelector('script[type="__bundler/template"]');
       if (!template) return;
       template.textContent = template.textContent
+        .replace('方舟｜年訂閱社群', '訪得們年訂閱社群')
+        .replace('方舟年訂閱｜US$2,000', '訪得們年訂閱社群｜US$2,000')
+        .replace(
+          /arkItems: \[[\s\S]*?\],\\n      vipItems:/,
+          'arkItems: [\\n' +
+          '        { title: \\"4 週培訓課（講完基礎概念）\\", desc: \\"包含如何找到定位、影片剪輯、輪播貼文製作，以及實際上變現要如何操作等等\\" },\\n' +
+          '        { title: \\"每週 1 次 Q&A（會有重播）\\", desc: \\"\\" },\\n' +
+          '        { title: \\"每月 1 次一對一諮詢（總共 12 次）\\", desc: \\"\\" },\\n' +
+          '        { title: \\"社群提問\\", desc: \\"平時有問題可以丟在社群裡面做 Q&A\\" }\\n' +
+          '      ],\\n      vipItems:'
+        )
         .replace('銷講可由我主持', '銷講我幫你設計')
         .replace(
           '你的開賣直播／銷講，我可以下場幫你主持。',
